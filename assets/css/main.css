@@ -4,10 +4,130 @@
   box-sizing: border-box;
 }
 
+:root {
+  --mint: #EFFAF1;
+  --green: #335c67;
+  --blue: #006ED4;
+  --black: #231B1D;
+} 
+
 html {
   font-family: 'Outfit', sans-serif;
+  background-color: var(--mint);
+  color: var(--black);
+  font-size: 18px;
 }
 
 p {
   line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+} 
+
+.site-width {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem; /* in this case 2 rem = 2 * 18px */
+}
+
+/* navigation */
+
+nav a {
+  text-decoration: none;
+  color: var(--blue);
+  margin: 0 0.6rem; /* in this case 0.6 rem = 60% of 18px */
+}
+
+nav a :first-child {
+  margin-left: 0;
+}
+
+/* titles */
+
+.title {
+  margin: 8rem 0 1rem;
+  font-size: 8rem;
+}
+
+.subtitle{
+  margin: 1rem 0;
+  font-size: 2.5rem;
+}
+
+.title,
+.subtitle {
+  color: var(--green);
+  font-weight: 200;
+}
+
+/* sections */
+
+.spaced-section  {
+  margin: 8rem 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem 1rem;
+}
+
+.grid-container .section-title {
+  grid-column: span 3;
+  color: var(--blue);
+}
+
+.grid-container article  {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.grid-container article h5 {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.grid-container article .price {
+  font-weight: var(--blue);
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  width: max-content;
+  transition: all 0.2s ease-out;
+}
+
+.btn:hover {
+  background-color: var(--blue);
+  color: white;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .grid-container {
+    grid-template-rows: auto 1fr 1fr 1fr;
+    grid-template-columns: auto;
+  } 
+
+  .grid-container .section-title {
+    grid-column: auto;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 850px) {
+ 
+  .grid-container article p {
+    display: none;
+  }
 }
