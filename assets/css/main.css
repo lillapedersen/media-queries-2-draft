@@ -48,7 +48,7 @@ nav a :first-child {
 
 .title {
   margin: 8rem 0 1rem;
-  font-size: 8rem;
+  font-size: 6vw;
 }
 
 .subtitle{
@@ -129,5 +129,39 @@ nav a :first-child {
  
   .grid-container article p {
     display: none;
+  }
+}
+
+@media print {
+  .print-hide {
+    display: none;
+  } 
+
+  .grid-container{
+    margin: 1rem 1rem;
+  } 
+
+  .spaced-section{
+    margin: 4rem 0;
+  }
+  .title{
+    margin: 2rem 0 1rem;
+    font-size: 3rem;
+  }
+
+  .subtitle{
+    margin: 0 0 2rem 0;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .title {
+    font-size: 7vw;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .title {
+    font-size: 8vw;
   }
 }
